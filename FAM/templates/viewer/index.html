@@ -1,0 +1,97 @@
+<!-- Página que contiene el cuerpo y extiende las propiedades de la pagina "base.html" -->
+
+{% extends "../viewer/base.html" %}
+{% load static %}
+
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/leaflet/leaflet.css' %}" />
+<link rel="stylesheet" href="{% static 'css/interface/interface.css' %}" />
+<link rel="stylesheet" href="{% static 'css/sidebar/sidebarR.css' %}" />
+<link rel="stylesheet" href="{% static 'css/fontawesome/css/all.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/toggle/toggle.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chat/chat.css' %}" />
+<script src="{% static 'js/leaflet/leaflet.js' %}"></script>
+<script src="{% static 'js/objects/leaflet.rotatedMarker.js' %}"></script>
+<script src="{% static 'js/jquery/jquery-3.1.1.min.js' %}"></script>
+{% endblock %}
+
+{% block chat %}
+<div id="sidebarChat">
+    <div>
+        <input id="abrir-chat" type="checkbox" value="Boton">
+    </div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class="fas fa-bars menu"></i>
+        <span class="logo_name">Menú</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <div class="iocn-link">
+                <a href="#"><i class="fas fa-home"></i>
+                    <span class="link_name">Home</span>
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name">Home</a></li>
+                <li><a href="#">AIR_MAP</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class="fas fa-fighter-jet"></i>
+                    <span class="link_name">Aeronave</span>
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name">Nave</a></li>
+                <li>
+                    <a>Mostrar todas las naves
+                        <div class="container">
+                            <label class="switch">
+                                <input type="checkbox" id="toggle-me">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </a>
+                </li>
+                <li id="labelId"><label>ID de aeronave:</label></li>
+                <li>
+                    <input id="inputId" type="text" />
+                    <input id="buttonId" type="button" />
+                    <input id="buttonClr" type="button" />
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="wrap">
+                <div class="widget">
+                    <div class="reloj">
+                        <label id="laberHour">Hora UTC</label>
+                        <p><label id="hora" class="hora"></label>:<label id="min" class="min"></label>:<label id="seg"
+                                class="seg"></label></p>
+                    </div>
+                    <div class="fecha">
+                        <p><label id="año" class="año">-</label>-<label id="mes" class="mes"></label>-<label id="dia"
+                                class="dia"></label></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<script src="{% static 'js/maps/maps.js' %}"></script>
+<script src="{% static 'js/viewer/settings.js' %}"></script>
+<script src="{% static 'js/objects/objects.js' %}"></script>
+<script src="{% static 'js/sidebar/sidebar.js' %}"></script>
+{% endblock %}

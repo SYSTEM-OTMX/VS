@@ -1,0 +1,23 @@
+<!-- 
+    Página principal que contiene la cabecera del visualizador.
+    Esta pagina funciona de plantilla, la cual heredara los atributos que esta contenga a las páginas que extendian
+    sus propiedades.
+-->
+{% load static %} <!-- Etiqueta para cargar archivos estaticos (Indispensable en Django)-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block scripts %}{% endblock %} <!-- Etiqueta para cargar archivos script y hojas de estilo (css)-->
+    <title>Visualizador</title>
+</head>
+
+<body>
+    <div id="viewer" style="left:0px; top:0px; bottom:0px; right:0px; position:absolute;"></div> <!-- Etiqueta div donde se incrusta el visualizador-->
+    {% block chat %}{% endblock %}
+    {% block sidebar %}{% endblock %}
+    {% block content %} {% endblock %} <!-- Etiqueta para incrustar el cuerpo de la página -->
+</body>

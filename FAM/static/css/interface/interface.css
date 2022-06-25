@@ -1,0 +1,26 @@
+#labelID{
+    position: absolute;
+    top: 80px;
+    left: 11px;
+    z-index: 600;
+}
+
+#inputID{
+    position: absolute;
+    top: 120px;
+    left: 11px;
+    width: 145px;
+    height: 20px;
+    z-index: 600;
+}
+
+#btnId{
+    position: absolute;
+    top: 122px;
+    left: 170px;
+    z-index: 600;
+}
+
+.sidebarChat{
+    z-index: 600;
+}
